@@ -119,7 +119,7 @@ In VS Code -> open a Terminal, then type:
 # Email must be the one provided on GitHub
 ssh-keygen -t ed25519 -C "your-email-on-github@example.com"
 ```
-This will generate two files with SSH-Keys on your computer (public & privat keys)  
+This will generate two files with SSH-Keys on your computer (public & privat key)  
 ```plaintext
 * Windows-Users look under: C:\Users\your-username\.ssh\id_ed25519.pub
 * Mac-Users look under: /Users/your-username/.ssh/id_ed25519.pub
@@ -174,13 +174,17 @@ git clone git@github.com:YOUR-USERNAME/scientific_programming.git
 # --> open the folder which include the cloned GitHub repository
 # --> open a Terminal to execute the Git commands below
 
-# 4. Set the upstream repository (= official course repository)
+# 4. Configure your Git username & email
+git config --global user.name "FIRST_NAME LAST_NAME"
+git config --global user.email "your-email-on-github@example.com"
+
+# 5. Add the upstream repository (= official course repository)
 git remote add upstream https://github.com/mario-gellrich-zhaw/scientific_programming.git
 
-# 5. Set the url of the origin (= your forked repository with the SSH URL)
+# 6. Set the url of the origin (= your forked repository with the SSH URL)
 git remote set-url origin git@github.com:YOUR-USERNAME/scientific_programming.git
 
-# 6. View the current configured remote repositories
+# 7. View the current configured remote repositories
 git remote -v
 
 # The output should look like (replace YOUR-USERNAME with your user name) ...
@@ -189,10 +193,10 @@ git remote -v
 # upstream        https://github.com/mario-gellrich-zhaw/scientific_programming.git (fetch)
 # upstream        https://github.com/mario-gellrich-zhaw/scientific_programming.git (push)
 
-# 7. Retrieve the latest changes from upstream repository
+# 8. Retrieve the latest changes from upstream repository
 git fetch upstream
 
-# 8. Updating your fork from upstream repository
+# 9. Updating your fork from upstream repository
 git pull upstream master
 ```
 
